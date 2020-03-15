@@ -3,7 +3,7 @@ A side project to try making a small SaaS print service. This is a very rudement
 
 __Desktop Client__
 - TCP server
-- Send POST request to server on startup registering it's address, port, and printer information
+- Send POST request to server on startup registering its address, port, and printer information
 
 __Server__
 - API
