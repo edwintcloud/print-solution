@@ -10,8 +10,6 @@ import (
 	"strings"
 )
 
-// only needed below for sample processing
-
 func main() {
 
 	fmt.Println("Launching server...")

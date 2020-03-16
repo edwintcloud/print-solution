@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  mongo-db:
+    image: mongo:4.2.3
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+  server:
+    build: server/.
+    ports:
+      - 5000:5000
+    environment:
+      - API_PORT=${API_PORT}
+      - MONGO_URL=${MONGO_URL}
+      - MONGO_DB=${MONGO_DB}
+      - MONGO_TIMEOUT=${MONGO_TIMEOUT}
+    volumes:
+      - ./web-dashboard/dist/spa:/cmd/static
+    depends_on:
+      - mongo-db
